@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  /*  Primary */
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --primary-color-cyan-faded: hsl(178, 100%, 50%, 0.3);
+
+  /* Neutral */
+  /* (main BG) */
+  --Very-dark-blue-main: hsl(217, 54%, 11%);
+  /* shadow 1 */
+  --Very-dark-blue-shadow-1: hsla(215, 57%, 9%, 0.064);
+  /* card__container */
+  --Very-dark-blue-container: hsla(211, 35%, 27%, 0.027);
+  /* (card BG) */
+  --Very-dark-blue-card: hsl(216, 50%, 16%);
+  /*  (line) */
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+
+  /* font */
+  --Outfit: "Outfit", sans-serif;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.attribution {
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Very-dark-blue-main);
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__container {
+  background-color: var(--Very-dark-blue-container);
+  width: 40rem;
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  margin-bottom: 10px;
+}
+
+.card {
+  height: 52rem;
+  width: 30rem;
+  background-color: var(--Very-dark-blue-card);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  border-radius: 2rem;
+  color: #fff;
+  padding: 20px;
+
+  -webkit-box-shadow: 0px 28px 0px 20px var(--Very-dark-blue-shadow-1);
+  -moz-box-shadow: 0px 28px 0px 20px var(--Very-dark-blue-shadow-1);
+  box-shadow: 0px 28px 0px 20px var(--Very-dark-blue-shadow-1);
+}
+
+.card__nft {
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color-cyan-faded);
+  border-radius: 2rem;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.overlay img {
+  display: inline;
+  height: 36px;
+  width: 36px;
+}
+
+.card__nft:hover .overlay {
+  opacity: 1;
+}
+
+.card__nft img {
+  border-radius: 2rem;
+}
+
+.card__description--title {
+  font-family: var(--Outfit);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.card__description--title:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+
+.card__description--body {
+  font-family: var(--Outfit);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--Soft-blue);
+  margin-bottom: 20px;
+}
+
+.card__stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-family: var(--Outfit);
+}
+
+.card__stats--price,
+.card__stats--duration {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.card__stats--price {
+  color: var(--Cyan);
+  font-weight: 600;
+}
+
+.card__stats--duration {
+  font-weight: 300;
+  color: var(--Soft-blue);
+}
+
+.card__stats img {
+  display: inline;
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+}
+
+hr {
+  margin-bottom: 20px;
+  border: none;
+  height: 1px;
+  background-color: var(--Very-dark-blue-line);
+}
+
+.card__creator {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.card__creator--avatar {
+  height: 30px;
+  width: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card__creator--name {
+  font-family: var(--Outfit);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.card__creator--name span:nth-of-type(1) {
+  color: var(--Soft-blue);
+  font-weight: 600;
+}
+
+.card__creator--name span:nth-of-type(2):hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+
+@media (max-width: 541px) {
+  .card__container {
+    width: 35rem;
+  }
+
+  .card {
+    width: 35rem;
+    height: 58rem;
+  }
+
+  .card__description--body {
+    font-size: 16px;
+  }
+
+  .attribution {
+    font-size: 12px;
+  }
+}
